@@ -1027,7 +1027,6 @@ Estimated effort for a single developer using an AI coding agent (Cursor / Claud
 | `ContactProviderInterface` + mock providers (from challenge mocks) | 1.5h | Interface design is human; mock implementations are AI-assisted |
 | CSV ingestion + normalization (company name, address) | 1.5h | `league/csv` parsing, suffix stripping, address normalization |
 | Company fingerprinting + dedup logic | 1h | Hash generation, duplicate flagging |
-| **Subtotal** | **6h** | |
 
 ### Phase 2 — Core pipeline (Day 2)
 
@@ -1039,7 +1038,6 @@ Estimated effort for a single developer using an AI coding agent (Cursor / Claud
 | Contact deduplication (fuzzy name matching, initial expansion) | 1h | Levenshtein + initial matching |
 | Email + phone validation logic | 1h | Domain blocklist, E.164 formatting, generic prefix detection |
 | Checkpoint / resume logic (DB transaction per batch) | 1h | Atomic writes, processed-ID tracking |
-| **Subtotal** | **7.5h** | |
 
 ### Phase 3 — Infrastructure (Day 3)
 
@@ -1052,7 +1050,6 @@ Estimated effort for a single developer using an AI coding agent (Cursor / Claud
 | Artisan command: `contacts:export` (JSON/CSV) | 0.5h | Query + format + write |
 | Regulated industry tagging (keyword + SIC/NAICS matching) | 0.5h | Keyword list, Ingest-stage hook |
 | Config file for weights, thresholds, provider settings | 0.5h | `config/enrichment.php` |
-| **Subtotal** | **6h** | |
 
 ### Phase 4 — Tests (Day 4)
 
@@ -1064,7 +1061,6 @@ Estimated effort for a single developer using an AI coding agent (Cursor / Claud
 | Unit tests: input sanitization | 0.5h | |
 | Feature tests: full pipeline, checkpoint, circuit breaker | 2h | Requires DB + Redis, mock HTTP |
 | Feature tests: encryption verification, audit logging | 1h | |
-| **Subtotal** | **7h** | |
 
 ### Phase 5 — Polish + calibration (Day 5)
 
@@ -1076,7 +1072,7 @@ Estimated effort for a single developer using an AI coding agent (Cursor / Claud
 | Performance tuning: batch size optimization, connection pooling | 1h | Benchmarking with 1K mock rows |
 | Documentation: code comments for non-obvious logic | 0.5h | |
 | End-to-end smoke test with full 30-row sample CSV | 0.5h | |
-| **Subtotal** | **6.5h** | |
+
 
 ### Total estimate
 
